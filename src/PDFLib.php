@@ -171,7 +171,8 @@ class PDFLib{
                 }else{
                     $this->gs_is_64 = null;
                     $this->gs_path = null;
-                    die($this->execute("where gswin64c.exe",true));
+                    $this->gs_command = null;
+                    $this->gs_version = -1;
                 }
                 if($this->gs_path && $this->gs_command){
                     $output = $this->execute($this->gs_command.' --version 2>&1');
